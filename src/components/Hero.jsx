@@ -18,7 +18,7 @@ const Hero = () => {
     padding: "0 20px",
     textAlign: "center"
 }}>
-  <h2 data-aos="fade-up" style={{}}>Hello World - I'm Aarush 👋</h2>
+  <h2 data-aos="fade-up" style={{}}>~/aarush</h2>
 
   <p data-aos="fade-up" data-aos-delay="100" style={{ maxWidth: '800px', margin: '0 auto' }}>
     I'm a second-year <strong>Software Engineering</strong> student at <strong>Western University</strong> with a thing for 
@@ -26,9 +26,7 @@ const Hero = () => {
   </p>
 
   <p data-aos="fade-up" data-aos-delay="200" style={{ maxWidth: '800px', margin: '20px auto' }}>
-    My journey into tech started not with code, but with curiosity — the kind that made me take apart gadgets and 
-    wonder how markets move.
-    My GitHub is my lab. My code is my edge.
+    My journey into tech started not with code, but with curiosity...
   </p>
 
   <p data-aos="fade-up" data-aos-delay="400" style={{ maxWidth: '800px', margin: '20px auto' }}>
