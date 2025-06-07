@@ -18,7 +18,7 @@ const Hero = () => {
     padding: "0 20px",
     textAlign: "center"
 }}>
-  <h2 data-aos="fade-up" style={{}}>~/aarush</h2>
+  <h2 data-aos="fade-up" style={{paddingTop: '120px'}}>~/aarush</h2>
 
   <p data-aos="fade-up" data-aos-delay="100" style={{ maxWidth: '800px', margin: '0 auto' }}>
     I'm a second-year <strong>Software Engineering</strong> student at <strong>Western University</strong> with a thing for 
