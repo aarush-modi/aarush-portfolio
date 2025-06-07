@@ -8,16 +8,24 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="about" style={{
+    <section
+  id="about"
+  style={{
     backgroundImage: "url('/dolomites-night.jpg')",
-    backgroundSize: "cover",
-    minHeight: "100vh",
+    backgroundSize: "cover",             // ✅ always fills, crops if needed
+    backgroundPosition: "center",        // ✅ keeps subject centered
+    backgroundRepeat: "no-repeat",       // ✅ no tiling
+    minHeight: "100vh",                  // ✅ fill full screen height
+    width: "100%",                       // ✅ full width
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
+    alignItems: "center",
     padding: "0 20px",
     textAlign: "center"
-}}>
+  }}
+>
+
   <h2 data-aos="fade-up" style={{paddingTop: '120px'}}>~/aarush</h2>
 
   <p data-aos="fade-up" data-aos-delay="100" style={{ maxWidth: '800px', margin: '0 auto' }}>
