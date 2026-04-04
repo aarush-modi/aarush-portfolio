@@ -11,7 +11,7 @@ const Hero = () => {
     <section
   id="about"
   style={{
-    backgroundImage: "url('/dolomites-night.jpg')",
+    backgroundImage: "url('/dolomites-night.webp')",
     backgroundSize: "cover",             // ✅ always fills, crops if needed
     backgroundPosition: "center",        // ✅ keeps subject centered
     backgroundRepeat: "no-repeat",       // ✅ no tiling
