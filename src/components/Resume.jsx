@@ -1,16 +1,60 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Resume = () => {
+  useEffect(() => {
+    AOS.init({ duration: 800 });
+  }, []);
+
   return (
     <section id="resume">
-      <h2>Resume</h2>
-      <p>Download my resume below:</p>
-      <a href="/resume.pdf" download style={{ color: '#f5b301', fontWeight: 'bold' }}>
-        Download PDF
-      </a>
+      <h2 data-aos="fade-up">Resume</h2>
+      <div
+        data-aos="fade-up"
+        data-aos-delay="100"
+        style={{
+          maxWidth: "700px",
+          margin: "0 auto",
+          backgroundColor: "var(--card-bg)",
+          borderRadius: "8px",
+          padding: "24px",
+          borderLeft: "4px solid var(--accent)",
+        }}
+      >
+        <iframe
+          src="/resume.pdf"
+          title="Resume"
+          style={{
+            width: "100%",
+            height: "600px",
+            border: "none",
+            borderRadius: "4px",
+            backgroundColor: "white",
+          }}
+        />
+        <a
+          href="/resume.pdf"
+          download
+          style={{
+            display: "inline-block",
+            marginTop: "20px",
+            backgroundColor: "var(--accent)",
+            color: "var(--bg)",
+            padding: "10px 24px",
+            borderRadius: "6px",
+            fontWeight: "bold",
+            textDecoration: "none",
+            transition: "opacity 0.3s",
+          }}
+          onMouseEnter={e => e.currentTarget.style.opacity = "0.85"}
+          onMouseLeave={e => e.currentTarget.style.opacity = "1"}
+        >
+          Download PDF
+        </a>
+      </div>
     </section>
   );
 };
 
 export default Resume;
-

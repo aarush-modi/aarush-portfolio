@@ -25,13 +25,13 @@ const Skills = () => {
             data-aos="fade-up"
             data-aos-delay={i * 100}
             style={{
-              backgroundColor: "#ffffff10",
+              backgroundColor: "var(--card-bg)",
               borderRadius: "8px",
               padding: "24px",
-              borderLeft: "4px solid #f5b301",
+              borderLeft: "4px solid var(--accent)",
             }}
           >
-            <h3 style={{ color: "#f5b301", marginBottom: "12px", fontSize: "1.1rem" }}>
+            <h3 style={{ color: "var(--accent)", marginBottom: "12px", fontSize: "1.1rem" }}>
               {group.category}
             </h3>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
@@ -39,11 +39,11 @@ const Skills = () => {
                 <span
                   key={item}
                   style={{
-                    backgroundColor: "#ffffff15",
+                    backgroundColor: "var(--card-bg-hover)",
                     padding: "6px 12px",
                     borderRadius: "20px",
                     fontSize: "0.85rem",
-                    color: "#ddd",
+                    color: "var(--text-muted)",
                   }}
                 >
                   {item}
