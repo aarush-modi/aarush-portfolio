@@ -16,10 +16,10 @@ const Resume = () => {
         style={{
           maxWidth: "700px",
           margin: "0 auto",
-          backgroundColor: "#ffffff10",
+          backgroundColor: "var(--card-bg)",
           borderRadius: "8px",
           padding: "24px",
-          borderLeft: "4px solid #f5b301",
+          borderLeft: "4px solid var(--accent)",
         }}
       >
         <iframe
@@ -39,8 +39,8 @@ const Resume = () => {
           style={{
             display: "inline-block",
             marginTop: "20px",
-            backgroundColor: "#f5b301",
-            color: "#0b1d35",
+            backgroundColor: "var(--accent)",
+            color: "var(--bg)",
             padding: "10px 24px",
             borderRadius: "6px",
             fontWeight: "bold",

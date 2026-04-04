@@ -23,19 +23,19 @@ const Experience = () => {
             key={index}
             data-aos="fade-right"
             style={{
-              background: "#ffffff10",
+              background: "var(--card-bg)",
               marginBottom: "20px",
               padding: "20px",
               borderRadius: "8px",
               cursor: "pointer",
               transition: "all 0.3s ease",
-              borderLeft: "4px solid #f5b301"
+              borderLeft: "4px solid var(--accent)"
             }}
             onClick={() => toggle(index)}
           >
             <div>
               <h3 style={{ marginBottom: "5px" }}>{exp.title}</h3>
-              <p style={{ fontSize: "0.9rem", color: "#ccc" }}>{exp.time}</p>
+              <p style={{ fontSize: "0.9rem", color: "var(--text-muted)" }}>{exp.time}</p>
             </div>
             {activeIndex === index && (
               <ul style={{ marginTop: "10px", textAlign: "left" }}>

@@ -24,7 +24,7 @@ const Connect = () => {
         <input type="text" name="name" required placeholder="Your Name" style={{ width: '100%', padding: '10px', marginBottom: '10px' }} />
         <input type="email" name="email" required placeholder="Your Email" style={{ width: '100%', padding: '10px', marginBottom: '10px' }} />
         <textarea name="message" rows="5" required placeholder="Your Message" style={{ width: '100%', padding: '10px', marginBottom: '10px' }} />
-        <button type="submit" style={{ backgroundColor: '#f5b301', padding: '10px 20px', border: 'none', color: '#0b1d35', fontWeight: 'bold' }}>
+        <button type="submit" style={{ backgroundColor: 'var(--accent)', padding: '10px 20px', border: 'none', color: 'var(--bg)', fontWeight: 'bold', borderRadius: '6px', cursor: 'pointer' }}>
           Send
         </button>
       </form>

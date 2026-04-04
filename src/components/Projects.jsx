@@ -26,26 +26,26 @@ const Projects = () => {
             key={i}
             data-aos="fade-up"
             style={{
-              backgroundColor: "#ffffff10",
+              backgroundColor: "var(--card-bg)",
               padding: "20px",
               borderRadius: "8px",
               maxWidth: "350px",
               minWidth: "280px",
               textAlign: "left",
               transition: "transform 0.3s",
-              boxShadow: "0 4px 10px rgba(0,0,0,0.2)",
-              borderLeft: "5px solid #f5b301"
+              boxShadow: "0 4px 10px var(--shadow)",
+              borderLeft: "5px solid var(--accent)"
             }}
             onMouseEnter={e => e.currentTarget.style.transform = "scale(1.03)"}
             onMouseLeave={e => e.currentTarget.style.transform = "scale(1)"}
           >
             <h3>{p.title}</h3>
             <p>{p.desc}</p>
-            <p style={{ fontSize: "0.85rem", color: "#ccc" }}>
+            <p style={{ fontSize: "0.85rem", color: "var(--text-muted)" }}>
               <strong>Tech:</strong> {p.tech.join(", ")}
             </p>
             <a href={p.link} target="_blank" rel="noreferrer" style={{
-              color: "#f5b301",
+              color: "var(--accent)",
               display: "inline-block",
               marginTop: "10px",
               fontWeight: "bold"

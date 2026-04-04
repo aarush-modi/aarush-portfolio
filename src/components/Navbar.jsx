@@ -1,12 +1,12 @@
 import React from 'react';
 import { navLinks } from '../data';
 
-const Navbar = () => {
+const Navbar = ({ theme, toggleTheme }) => {
   const navStyle = {
     position: "fixed",
     top: 0,
     width: "100%",
-    backgroundColor: "rgba(11, 29, 53, 0.8)",
+    backgroundColor: "var(--bg-nav)",
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
@@ -14,7 +14,7 @@ const Navbar = () => {
     zIndex: 999,
     backdropFilter: "blur(10px)",
     WebkitBackdropFilter: "blur(10px)",
-    boxShadow: "0 2px 8px rgba(0, 0, 0, 0.5)"
+    boxShadow: "0 2px 8px var(--shadow)"
   };
 
   const linkGroup = {
@@ -25,7 +25,7 @@ const Navbar = () => {
 
   const linkStyle = {
     position: "relative",
-    color: "white",
+    color: "var(--text)",
     textDecoration: "none",
     fontWeight: "500",
     transition: "color 0.3s",
@@ -40,13 +40,13 @@ const Navbar = () => {
       bottom: -4px;
       left: 50%;
       transform: translateX(-50%);
-      background-color: #f5b301;
+      background-color: var(--accent);
       transition: width 0.3s ease;
     }
 
     nav a:hover {
-      color: #f5b301;
-      text-shadow: 0 0 8px #f5b30188;
+      color: var(--accent);
+      text-shadow: 0 0 8px color-mix(in srgb, var(--accent) 50%, transparent);
     }
 
     nav a:hover::after {
@@ -58,13 +58,35 @@ const Navbar = () => {
     <>
       <style>{linkHover}</style>
       <nav style={navStyle}>
-        <div style={{ color: "#f5b301", fontWeight: "bold", fontSize: "1.2rem" }}>
+        <div style={{ color: "var(--accent)", fontWeight: "bold", fontSize: "1.2rem" }}>
           Aarush Modi
         </div>
         <div style={linkGroup}>
           {navLinks.map((link) => (
             <a key={link.href} href={link.href} style={linkStyle}>{link.label}</a>
           ))}
+          <button
+            onClick={toggleTheme}
+            aria-label="Toggle theme"
+            style={{
+              background: "none",
+              border: "2px solid var(--accent)",
+              borderRadius: "50%",
+              width: "36px",
+              height: "36px",
+              cursor: "pointer",
+              fontSize: "1.1rem",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              transition: "transform 0.3s, background-color 0.3s",
+              backgroundColor: "transparent",
+            }}
+            onMouseEnter={e => e.currentTarget.style.transform = "rotate(30deg)"}
+            onMouseLeave={e => e.currentTarget.style.transform = "rotate(0deg)"}
+          >
+            {theme === "dark" ? "☀️" : "🌙"}
+          </button>
         </div>
       </nav>
     </>
