@@ -1,5 +1,6 @@
 export const navLinks = [
   { label: "About", href: "#about" },
+  { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
   { label: "Experience", href: "#experience" },
   { label: "Resume", href: "#resume" },
@@ -52,6 +53,13 @@ export const experience = [
       "Represented residence as a Floor Rep on the Council — organized events and bridged communication gaps.",
     ],
   },
+];
+
+export const skills = [
+  { category: "Languages", items: ["Python", "Java", "C++", "Swift", "JavaScript"] },
+  { category: "Data & ML", items: ["Pandas", "NumPy", "Matplotlib", "Scikit-learn", "SQLite"] },
+  { category: "Web & Tools", items: ["React", "HTML/CSS", "Git", "Vite", "GitHub Pages"] },
+  { category: "Interests", items: ["Algorithmic Trading", "Machine Learning", "Financial Systems", "Quantitative Analysis"] },
 ];
 
 export const socials = [
