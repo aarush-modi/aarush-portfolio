@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { socials } from '../data';
 
 const Connect = () => {
   return (
@@ -7,12 +8,11 @@ const Connect = () => {
       <h2>Connect With Me</h2>
 
       <div style={{ fontSize: '30px', marginBottom: '20px' }}>
-        <a href="https://github.com/aarush-modi" target="_blank" rel="noreferrer">
-          <FaGithub style={{ marginRight: '15px' }} />
-        </a>
-        <a href="https://linkedin.com/in/aarush-modi" target="_blank" rel="noreferrer">
-          <FaLinkedin />
-        </a>
+        {socials.map((s) => (
+          <a key={s.platform} href={s.url} target="_blank" rel="noreferrer">
+            {s.platform === 'github' ? <FaGithub style={{ marginRight: '15px' }} /> : <FaLinkedin />}
+          </a>
+        ))}
       </div>
 
       <form

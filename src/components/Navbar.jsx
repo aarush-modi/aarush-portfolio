@@ -1,4 +1,5 @@
 import React from 'react';
+import { navLinks } from '../data';
 
 const Navbar = () => {
   const navStyle = {
@@ -61,11 +62,9 @@ const Navbar = () => {
           Aarush Modi
         </div>
         <div style={linkGroup}>
-          <a href="#about" style={linkStyle}>About</a>
-          <a href="#projects" style={linkStyle}>Projects</a>
-          <a href="#experience" style={linkStyle}>Experience</a>
-          <a href="#resume" style={linkStyle}>Resume</a>
-          <a href="#connect" style={linkStyle}>Connect</a>
+          {navLinks.map((link) => (
+            <a key={link.href} href={link.href} style={linkStyle}>{link.label}</a>
+          ))}
         </div>
       </nav>
     </>

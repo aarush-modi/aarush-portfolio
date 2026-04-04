@@ -1,33 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-
-const experienceData = [
-  {
-    title: "Apple Inc. — iOS Developer Co-Op",
-    time: "2023 – 2024",
-    bullets: [
-      "Built internal tools and helped resolve bugs for the Career Education Council.",
-      "Developed and pitched NeuroNova: a cognitive enhancement app featured in the Guelph App Showcase.",
-    ]
-  },
-  {
-    title: "Engineering Design Projects",
-    time: "2024 – Present",
-    bullets: [
-      "Designed a therapeutic wellness lamp for Seasonal Affective Disorder.",
-      "Created a kinetic energy measurement system for lab hail simulation experiments."
-    ]
-  },
-  {
-    title: "Leadership & Competitions",
-    time: "2024 – Present",
-    bullets: [
-      "Led a team in the 1220/1299 Ivey Case Competition (General Management Track).",
-      "Represented residence as a Floor Rep on the Council — organized events and bridged communication gaps."
-    ]
-  }
-];
+import { experience as experienceData } from '../data';
 
 const Experience = () => {
   const [activeIndex, setActiveIndex] = useState(null);
