@@ -32,7 +32,7 @@ const Experience = () => {
             onClick={() => toggle(index)}
             onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(index); } }}
           >
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", textAlign: "left" }}>
               <div>
                 <h3 style={{ marginBottom: "5px" }}>{exp.title}</h3>
                 <p style={{ fontSize: "0.9rem", color: "var(--text-muted)" }}>{exp.time}</p>
