@@ -8,7 +8,7 @@ const Skills = () => {
       <h2 data-aos="fade-up">Skills</h2>
       <div style={{
         display: "grid",
-        gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+        gridTemplateColumns: "repeat(2, 1fr)",
         gap: "24px",
         maxWidth: "900px",
         margin: "40px auto 0",
