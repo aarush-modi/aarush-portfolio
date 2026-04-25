@@ -1,6 +1,4 @@
-import React, { useEffect, useRef } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import React, { useRef } from 'react';
 import { projects } from '../data';
 
 const ProjectCard = ({ project, delay }) => {
@@ -87,10 +85,6 @@ const ProjectCard = ({ project, delay }) => {
 };
 
 const Projects = () => {
-  useEffect(() => {
-    AOS.init({ duration: 800 });
-  }, []);
-
   return (
     <section id="projects">
       <h2 style={{ textAlign: "center" }}>Projects</h2>

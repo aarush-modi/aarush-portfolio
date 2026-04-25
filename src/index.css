@@ -76,6 +76,10 @@ nav a:hover {
   color: var(--accent);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html, body {
   overflow-x: hidden;
 }

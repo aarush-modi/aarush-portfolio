@@ -1,14 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import React, { useState } from 'react';
 import { experience as experienceData } from '../data';
 
 const Experience = () => {
   const [activeIndex, setActiveIndex] = useState(null);
-
-  useEffect(() => {
-    AOS.init({ duration: 1000 });
-  }, []);
 
   const toggle = index => {
     setActiveIndex(prev => (prev === index ? null : index));
@@ -22,6 +16,7 @@ const Experience = () => {
           <div
             key={index}
             data-aos="fade-right"
+            data-aos-delay={index * 150}
             style={{
               background: "var(--card-bg)",
               marginBottom: "20px",
@@ -33,11 +28,26 @@ const Experience = () => {
             }}
             onClick={() => toggle(index)}
           >
-            <div>
-              <h3 style={{ marginBottom: "5px" }}>{exp.title}</h3>
-              <p style={{ fontSize: "0.9rem", color: "var(--text-muted)" }}>{exp.time}</p>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+              <div>
+                <h3 style={{ marginBottom: "5px" }}>{exp.title}</h3>
+                <p style={{ fontSize: "0.9rem", color: "var(--text-muted)" }}>{exp.time}</p>
+              </div>
+              <span style={{
+                fontSize: "1.2rem",
+                transition: "transform 0.3s",
+                transform: activeIndex === index ? "rotate(90deg)" : "rotate(0deg)",
+                color: "var(--accent)",
+              }}>
+                ›
+              </span>
             </div>
-            {activeIndex === index && (
+            <div style={{
+              maxHeight: activeIndex === index ? "500px" : "0",
+              overflow: "hidden",
+              transition: "max-height 0.4s ease, opacity 0.3s ease",
+              opacity: activeIndex === index ? 1 : 0,
+            }}>
               <ul style={{ marginTop: "10px", textAlign: "left" }}>
                 {exp.bullets.map((item, i) => (
                   <li key={i} style={{ marginBottom: "8px" }}>
@@ -45,7 +55,7 @@ const Experience = () => {
                   </li>
                 ))}
               </ul>
-            )}
+            </div>
           </div>
         ))}
       </div>

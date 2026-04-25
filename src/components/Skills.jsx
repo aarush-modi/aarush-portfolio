@@ -1,12 +1,7 @@
-import React, { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import React from 'react';
 import { skills } from '../data';
 
 const Skills = () => {
-  useEffect(() => {
-    AOS.init({ duration: 800 });
-  }, []);
 
   return (
     <section id="skills">
