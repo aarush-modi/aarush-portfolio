@@ -9,10 +9,22 @@ export const navLinks = [
 
 export const projects = [
   {
+    title: "F.R.I.D.A.Y. Assistant",
+    desc: "Building a personal AI assistant inspired by Iron Man's F.R.I.D.A.Y. — an intelligent, voice-driven system designed to automate tasks, manage workflows, and provide real-time insights.",
+    tech: ["Python", "AI/ML", "NLP", "APIs"],
+    link: "https://github.com/aarush-modi",
+  },
+  {
     title: "ML Stock Portfolio Analysis Tool",
     desc: "Python-based command-line application that lets users fetch, store, and analyze historical stock data — and forecast the next day's closing price using a regression model. Designed for finance enthusiasts, data scientists, and aspiring quants who want to explore short-term equity price prediction.",
     tech: ["Python", "Pandas", "SQLite", "Matplotlib", "yfinance"],
     link: "https://github.com/aarush-modi/Stock-Portfolio-Analysis",
+  },
+  {
+    title: "2D Fantasy Kingdom RPG",
+    desc: "A top-down 2D RPG set in a fantasy kingdom, built as a school project. Features exploration, combat, and story-driven quests in a hand-crafted pixel world.",
+    tech: ["Unity", "C#", "2D Game Design"],
+    link: "https://github.com/aarush-modi",
   },
   {
     title: "Monte Carlo Option Pricer",
@@ -38,11 +50,20 @@ export const experience = [
     ],
   },
   {
+    title: "Volunteer Web Developer — Government-Funded Daycares",
+    time: "2025 – Present",
+    bullets: [
+      "Designing and developing websites for government-funded daycares to improve their online presence and community reach.",
+      "Working directly with daycare administrators to understand their needs and deliver accessible, user-friendly sites.",
+    ],
+  },
+  {
     title: "Engineering Design Projects",
     time: "2024 – Present",
     bullets: [
       "Designed a therapeutic wellness lamp for Seasonal Affective Disorder.",
       "Created a kinetic energy measurement system for lab hail simulation experiments.",
+      "Built a deep sea topographic mining tool for mapping and analyzing underwater terrain for resource extraction.",
     ],
   },
   {
@@ -56,9 +77,9 @@ export const experience = [
 ];
 
 export const skills = [
-  { category: "Languages", items: ["Python", "Java", "C++", "Swift", "JavaScript"] },
+  { category: "Languages", items: ["Python", "Java", "C++", "C#", "Swift", "JavaScript"] },
   { category: "Data & ML", items: ["Pandas", "NumPy", "Matplotlib", "Scikit-learn", "SQLite"] },
-  { category: "Web & Tools", items: ["React", "HTML/CSS", "Git", "Vite", "GitHub Pages"] },
+  { category: "Web & Tools", items: ["React", "HTML/CSS", "Git", "Vite", "Unity", "GitHub Pages"] },
   { category: "Interests", items: ["Algorithmic Trading", "Machine Learning", "Financial Systems", "Quantitative Analysis"] },
 ];
 
