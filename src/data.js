@@ -77,10 +77,10 @@ export const experience = [
 ];
 
 export const skills = [
-  { category: "Languages", items: ["Python", "Java", "C++", "C#", "Swift", "JavaScript"] },
-  { category: "Data & ML", items: ["Pandas", "NumPy", "Matplotlib", "Scikit-learn", "SQLite"] },
-  { category: "Web & Tools", items: ["React", "HTML/CSS", "Git", "Vite", "Unity", "GitHub Pages"] },
-  { category: "Interests", items: ["Algorithmic Trading", "Machine Learning", "Financial Systems", "Quantitative Analysis"] },
+  { category: "Languages", items: ["Python", "JavaScript", "HTML", "CSS", "C/C++", "C#", "Java", "Swift", "Arduino"] },
+  { category: "Frameworks & Libraries", items: ["React", "Vite", "FastAPI", "Pandas", "NumPy", "Scikit-learn", "Matplotlib", "yfinance", "Deck.gl", "MapLibre GL JS", "AOS", "react-icons"] },
+  { category: "Tools & Platforms", items: ["Git", "GitHub", "SQLite", "Uvicorn", "Arduino", "Unity", "gh-pages"] },
+  { category: "Concepts & Methods", items: ["Monte Carlo Simulation", "Black-Scholes Pricing", "Linear Regression", "Time-series Forecasting", "Backtesting", "Sharpe Ratio", "Maximum Drawdown", "MAE/RMSE Evaluation", "REST APIs", "3D Geospatial Visualization", "Embedded Systems", "CLI Design"] },
 ];
 
 export const socials = [
