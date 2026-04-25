@@ -50,7 +50,7 @@ export const experience = [
     ],
   },
   {
-    title: "Volunteer Web Developer — Government-Funded Daycares",
+    title: "Volunteer Web Dev — Public Daycares",
     time: "2025 – Present",
     bullets: [
       "Designing and developing websites for government-funded daycares to improve their online presence and community reach.",
