@@ -89,7 +89,7 @@ const Navbar = ({ theme, toggleTheme }) => {
         zIndex: 1000,
         transition: "width 0.1s linear",
       }} />
-      <nav style={navStyle}>
+      <nav style={navStyle} aria-label="Main navigation">
         <div style={{ color: "var(--accent)", fontWeight: "bold", fontSize: "1.2rem" }}>
           Aarush Modi
         </div>

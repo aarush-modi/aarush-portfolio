@@ -29,13 +29,16 @@ function App() {
 
   return (
     <>
+      <a className="skip-link" href="#about">Skip to content</a>
       <Navbar theme={theme} toggleTheme={toggleTheme} />
-      <Hero />
-      <Skills />
-      <Projects />
-      <Experience />
-      <Resume />
-      <Connect />
+      <main>
+        <Hero />
+        <Skills />
+        <Projects />
+        <Experience />
+        <Resume />
+        <Connect />
+      </main>
     </>
   );
 }

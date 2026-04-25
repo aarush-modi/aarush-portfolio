@@ -27,6 +27,7 @@ const Connect = () => {
             href={s.url}
             target="_blank"
             rel="noreferrer"
+            aria-label={s.platform === 'github' ? 'GitHub profile' : 'LinkedIn profile'}
             style={{ transition: "transform 0.3s, color 0.3s", display: "inline-block" }}
             onMouseEnter={e => e.currentTarget.style.transform = "translateY(-3px)"}
             onMouseLeave={e => e.currentTarget.style.transform = "translateY(0)"}
@@ -41,6 +42,7 @@ const Connect = () => {
         data-aos-delay="200"
         action="https://formsubmit.co/amodi32@uwo.ca"
         method="POST"
+        aria-label="Contact form"
         style={{ maxWidth: '400px', margin: '0 auto' }}
       >
         <input type="hidden" name="_subject" value="Website Contact Form Response" />

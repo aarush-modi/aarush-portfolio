@@ -68,7 +68,7 @@ const ProjectCard = ({ project, delay }) => {
           </span>
         ))}
       </div>
-      <a href={project.link} target="_blank" rel="noreferrer" style={{
+      <a href={project.link} target="_blank" rel="noreferrer" aria-label={`View ${project.title} on GitHub`} style={{
         color: "var(--accent)",
         display: "inline-block",
         fontWeight: "bold",

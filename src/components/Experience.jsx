@@ -15,6 +15,9 @@ const Experience = () => {
         {experienceData.map((exp, index) => (
           <div
             key={index}
+            role="button"
+            tabIndex={0}
+            aria-expanded={activeIndex === index}
             data-aos="fade-right"
             data-aos-delay={index * 150}
             style={{
@@ -27,6 +30,7 @@ const Experience = () => {
               borderLeft: "4px solid var(--accent)"
             }}
             onClick={() => toggle(index)}
+            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(index); } }}
           >
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <div>
