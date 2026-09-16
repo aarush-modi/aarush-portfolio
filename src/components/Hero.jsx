@@ -35,16 +35,23 @@ const Hero = () => {
         <h2 data-aos="fade-up" style={{ paddingTop: '120px' }}>~/aarush</h2>
 
         <p data-aos="fade-up" data-aos-delay="100" style={{ maxWidth: '800px', margin: '0 auto' }}>
-          I'm a second-year <strong>Software Engineering</strong> student at <strong>Western University</strong> with a thing for
-          <strong> algorithms, financial systems</strong>, and building ideas that outlive codebases.
+          I'm a third-year <strong>Software Engineering</strong> student at <strong>Western University</strong>, specializing in
+          <strong> Artificial Intelligence</strong> — with a thing for <strong>multi-agent AI systems, financial modelling</strong>,
+          and building ideas that outlive codebases.
         </p>
 
         <p data-aos="fade-up" data-aos-delay="200" style={{ maxWidth: '800px', margin: '20px auto' }}>
           My journey into tech started not with code, but with curiosity...
         </p>
 
+        <p data-aos="fade-up" data-aos-delay="300" style={{ maxWidth: '800px', margin: '20px auto' }}>
+          This past summer I was the sole software developer at <strong>A&amp;A Optoelectronics</strong>, where I owned a production
+          website end to end and designed a Bluetooth mesh app for commercial lighting control.
+        </p>
+
         <p data-aos="fade-up" data-aos-delay="400" style={{ maxWidth: '800px', margin: '20px auto' }}>
-          I'm fluent in <strong>Python, Java, C++, Swift</strong>, and dangerously curious about <strong>machine learning and algorithmic trading</strong>.
+          I'm fluent in <strong>Python, Java, C++, and Swift</strong>, and most of my time goes to <strong>LLM engineering</strong> —
+          agent orchestration, RAG pipelines, and the quantitative systems underneath <strong>algorithmic trading</strong>.
         </p>
 
         <p data-aos="fade-up" data-aos-delay="500" style={{ maxWidth: '800px', margin: '20px auto' }}>

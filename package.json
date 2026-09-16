@@ -2,7 +2,7 @@
   "name": "aarush-portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://aarush-modi.ca",
+  "homepage": "https://aarushmodi.ca",
   "type": "module",
   "dependencies": {
     "aos": "^2.3.4",

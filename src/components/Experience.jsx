@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { experience as experienceData } from '../data';
+import { experience as experienceData, education } from '../data';
 
 const Experience = () => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -10,6 +10,32 @@ const Experience = () => {
 
   return (
     <section id="experience">
+      <h2 data-aos="fade-up">Education</h2>
+      <div
+        data-aos="fade-up"
+        data-aos-delay="100"
+        style={{
+          maxWidth: '800px',
+          margin: '40px auto 80px',
+          background: 'var(--card-bg)',
+          padding: '20px',
+          borderRadius: '8px',
+          borderLeft: '4px solid var(--accent)',
+          textAlign: 'left',
+        }}
+      >
+        <h3 style={{ marginBottom: '5px' }}>{education.school}</h3>
+        <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', marginBottom: '10px' }}>
+          {education.time} · {education.location}
+        </p>
+        <p style={{ marginBottom: '10px' }}>{education.degree}</p>
+        <ul style={{ paddingLeft: '20px' }}>
+          {education.details.map((d, i) => (
+            <li key={i} style={{ marginBottom: '8px' }}>{d}</li>
+          ))}
+        </ul>
+      </div>
+
       <h2 data-aos="fade-up">Experience</h2>
       <div style={{ maxWidth: '800px', margin: '40px auto' }}>
         {experienceData.map((exp, index) => (
@@ -47,7 +73,7 @@ const Experience = () => {
               </span>
             </div>
             <div style={{
-              maxHeight: activeIndex === index ? "500px" : "0",
+              maxHeight: activeIndex === index ? "800px" : "0",
               overflow: "hidden",
               transition: "max-height 0.4s ease, opacity 0.3s ease",
               opacity: activeIndex === index ? 1 : 0,
