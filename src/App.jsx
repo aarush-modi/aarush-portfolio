@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Skills from './components/Skills';
@@ -11,21 +9,23 @@ import Connect from './components/Connect';
 
 function App() {
   const [theme, setTheme] = useState(() => {
-    return localStorage.getItem('theme') || 'dark';
+    try {
+      return localStorage.getItem('theme') || 'dark';
+    } catch {
+      return 'dark';
+    }
   });
 
   useEffect(() => {
-    AOS.init({ duration: 800, once: false, mirror: true });
-  }, []);
-
-  useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
+    try {
+      localStorage.setItem('theme', theme);
+    } catch {
+      /* private browsing — theme just won't persist */
+    }
   }, [theme]);
 
-  const toggleTheme = () => {
-    setTheme(prev => prev === 'dark' ? 'light' : 'dark');
-  };
+  const toggleTheme = () => setTheme(prev => (prev === 'dark' ? 'light' : 'dark'));
 
   return (
     <>
@@ -39,6 +39,9 @@ function App() {
         <Resume />
         <Connect />
       </main>
+      <footer className="footer">
+        © {new Date().getFullYear()} Aarush Modi
+      </footer>
     </>
   );
 }

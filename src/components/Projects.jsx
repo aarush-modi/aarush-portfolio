@@ -1,106 +1,78 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { projects } from '../data';
+import Reveal from './Reveal';
 
-const ProjectCard = ({ project, delay }) => {
-  const cardRef = useRef(null);
-
-  const handleMouseMove = (e) => {
-    const card = cardRef.current;
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-    const rotateX = ((y - centerY) / centerY) * -8;
-    const rotateY = ((x - centerX) / centerX) * 8;
-
-    card.style.transform = `perspective(600px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
-  };
-
-  const handleMouseLeave = () => {
-    cardRef.current.style.transform = 'perspective(600px) rotateX(0deg) rotateY(0deg) scale(1)';
-  };
-
-  return (
-    <div
-      ref={cardRef}
-      data-aos="fade-up"
-      data-aos-delay={delay}
+const ProjectCard = ({ project, featured }) => (
+  <div
+    className="card card-interactive"
+    style={{ height: '100%', display: 'flex', flexDirection: 'column' }}
+  >
+    <h3
       style={{
-        backgroundColor: "var(--card-bg)",
-        padding: "24px",
-        borderRadius: "8px",
-        maxWidth: "350px",
-        minWidth: "280px",
-        textAlign: "left",
-        transition: "transform 0.15s ease-out, box-shadow 0.3s ease",
-        boxShadow: "0 4px 10px var(--shadow)",
-        borderLeft: "5px solid var(--accent)",
-        transformStyle: "preserve-3d",
+        fontSize: featured ? 'clamp(1.5rem, 3.2vw, 2.125rem)' : '1.3125rem',
+        fontWeight: 600,
+        letterSpacing: '-0.025em',
+        lineHeight: 1.15,
+        marginBottom: '14px',
       }}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
     >
-      <h3>{project.title}</h3>
-      <p style={{ margin: "12px 0" }}>{project.desc}</p>
-      <div style={{ display: "flex", flexWrap: "wrap", gap: "6px", marginBottom: "12px" }}>
-        {project.tech.map((t) => (
-          <span
-            key={t}
-            style={{
-              backgroundColor: "var(--card-bg-hover)",
-              padding: "4px 10px",
-              borderRadius: "14px",
-              fontSize: "0.8rem",
-              color: "var(--text-muted)",
-              transition: "background-color 0.2s, color 0.2s",
-            }}
-            onMouseEnter={e => {
-              e.currentTarget.style.backgroundColor = "var(--accent)";
-              e.currentTarget.style.color = "var(--bg)";
-            }}
-            onMouseLeave={e => {
-              e.currentTarget.style.backgroundColor = "var(--card-bg-hover)";
-              e.currentTarget.style.color = "var(--text-muted)";
-            }}
-          >
-            {t}
-          </span>
-        ))}
-      </div>
-      <a href={project.link} target="_blank" rel="noreferrer" aria-label={`View ${project.title} on GitHub`} style={{
-        color: "var(--accent)",
-        display: "inline-block",
-        fontWeight: "bold",
-        textDecoration: "none",
-        transition: "letter-spacing 0.3s",
+      {project.title}
+    </h3>
+
+    <p
+      className="muted"
+      style={{
+        fontSize: featured ? '1.0625rem' : '0.9375rem',
+        lineHeight: 1.6,
+        marginBottom: '22px',
+        maxWidth: featured ? '68ch' : 'none',
       }}
-        onMouseEnter={e => e.currentTarget.style.letterSpacing = "1px"}
-        onMouseLeave={e => e.currentTarget.style.letterSpacing = "0px"}
-      >
-        View on GitHub →
-      </a>
+    >
+      {project.desc}
+    </p>
+
+    <div className="chip-row" style={{ marginBottom: '22px' }}>
+      {project.tech.map(t => (
+        <span key={t} className="chip">{t}</span>
+      ))}
     </div>
-  );
-};
+
+    <a
+      href={project.link}
+      target="_blank"
+      rel="noreferrer"
+      className="arrow-link"
+      aria-label={`View ${project.title} on GitHub`}
+      style={{ marginTop: 'auto' }}
+    >
+      <span>View on GitHub</span>
+      <span aria-hidden="true">→</span>
+    </a>
+  </div>
+);
 
 const Projects = () => {
+  const [lead, ...rest] = projects;
+
   return (
     <section id="projects">
-      <h2 style={{ textAlign: "center" }}>Projects</h2>
-      <div style={{
-        display: "flex",
-        flexWrap: "wrap",
-        justifyContent: "center",
-        gap: "30px",
-        marginTop: "40px",
-        maxWidth: "1200px",
-        marginLeft: "auto",
-        marginRight: "auto"
-      }}>
-        {projects.map((p, i) => (
-          <ProjectCard key={i} project={p} delay={i * 100} />
-        ))}
+      <div className="section">
+        <Reveal className="section-head">
+          <p className="eyebrow">Selected work</p>
+          <h2 className="section-title">Things I've shipped.</h2>
+        </Reveal>
+
+        <div className="grid-2">
+          <Reveal className="span-all">
+            <ProjectCard project={lead} featured />
+          </Reveal>
+
+          {rest.map((p, i) => (
+            <Reveal key={p.title} delay={i * 60} style={{ height: '100%' }}>
+              <ProjectCard project={p} />
+            </Reveal>
+          ))}
+        </div>
       </div>
     </section>
   );

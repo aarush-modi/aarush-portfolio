@@ -1,55 +1,44 @@
 import React from 'react';
+import Reveal from './Reveal';
 
-const Resume = () => {
+const Resume = () => (
+  <section id="resume">
+    <div className="section">
+      <Reveal className="section-head">
+        <p className="eyebrow">Résumé</p>
+        <h2 className="section-title">The one-page version.</h2>
+      </Reveal>
 
-  return (
-    <section id="resume">
-      <h2 data-aos="fade-up">Resume</h2>
-      <div
-        data-aos="fade-up"
-        data-aos-delay="100"
-        style={{
-          maxWidth: "700px",
-          margin: "0 auto",
-          backgroundColor: "var(--card-bg)",
-          borderRadius: "8px",
-          padding: "24px",
-          borderLeft: "4px solid var(--accent)",
-        }}
-      >
-        <iframe
-          src="/resume.pdf"
-          title="Resume"
+      <Reveal delay={80}>
+        <div
           style={{
-            width: "100%",
-            height: "600px",
-            border: "none",
-            borderRadius: "4px",
-            backgroundColor: "white",
+            borderRadius: 'var(--radius-lg)',
+            overflow: 'hidden',
+            border: '1px solid var(--hairline)',
+            backgroundColor: '#ffffff',
           }}
-        />
-        <a
-          href="/resume.pdf"
-          download
-          style={{
-            display: "inline-block",
-            marginTop: "20px",
-            backgroundColor: "var(--accent)",
-            color: "var(--bg)",
-            padding: "10px 24px",
-            borderRadius: "6px",
-            fontWeight: "bold",
-            textDecoration: "none",
-            transition: "opacity 0.3s",
-          }}
-          onMouseEnter={e => e.currentTarget.style.opacity = "0.85"}
-          onMouseLeave={e => e.currentTarget.style.opacity = "1"}
         >
-          Download PDF
-        </a>
-      </div>
-    </section>
-  );
-};
+          <iframe
+            src="/resume.pdf#view=FitH"
+            title="Aarush Modi résumé"
+            style={{
+              display: 'block',
+              width: '100%',
+              height: 'clamp(480px, 88vh, 900px)',
+              border: 'none',
+            }}
+          />
+        </div>
+
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '14px', marginTop: '28px' }}>
+          <a href="/resume.pdf" download className="btn btn-primary">Download PDF</a>
+          <a href="/resume.pdf" target="_blank" rel="noreferrer" className="btn btn-secondary">
+            Open in new tab
+          </a>
+        </div>
+      </Reveal>
+    </div>
+  </section>
+);
 
 export default Resume;

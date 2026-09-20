@@ -1,55 +1,40 @@
 import React from 'react';
 import { skills } from '../data';
+import Reveal from './Reveal';
 
-const Skills = () => {
+const Skills = () => (
+  <section id="skills" className="band">
+    <div className="section">
+      <Reveal className="section-head">
+        <p className="eyebrow">Toolkit</p>
+        <h2 className="section-title">What I build with.</h2>
+      </Reveal>
 
-  return (
-    <section id="skills">
-      <h2 data-aos="fade-up">Skills</h2>
-      <div style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(2, 1fr)",
-        gap: "24px",
-        maxWidth: "900px",
-        margin: "40px auto 0",
-        textAlign: "left",
-      }}>
+      <div className="grid-2">
         {skills.map((group, i) => (
-          <div
-            key={group.category}
-            data-aos="fade-up"
-            data-aos-delay={i * 100}
-            style={{
-              backgroundColor: "var(--card-bg)",
-              borderRadius: "8px",
-              padding: "24px",
-              borderLeft: "4px solid var(--accent)",
-            }}
-          >
-            <h3 style={{ color: "var(--accent)", marginBottom: "12px", fontSize: "1.1rem" }}>
-              {group.category}
-            </h3>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
-              {group.items.map((item) => (
-                <span
-                  key={item}
-                  style={{
-                    backgroundColor: "var(--card-bg-hover)",
-                    padding: "6px 12px",
-                    borderRadius: "20px",
-                    fontSize: "0.85rem",
-                    color: "var(--text-muted)",
-                  }}
-                >
-                  {item}
-                </span>
-              ))}
+          <Reveal key={group.category} delay={i * 70} style={{ height: '100%' }}>
+            <div className="card" style={{ height: '100%' }}>
+              <h3
+                style={{
+                  fontSize: '1.0625rem',
+                  fontWeight: 600,
+                  letterSpacing: '-0.02em',
+                  marginBottom: '18px',
+                }}
+              >
+                {group.category}
+              </h3>
+              <div className="chip-row">
+                {group.items.map(item => (
+                  <span key={item} className="chip">{item}</span>
+                ))}
+              </div>
             </div>
-          </div>
+          </Reveal>
         ))}
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default Skills;

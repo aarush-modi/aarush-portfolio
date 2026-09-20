@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#0b1d35" />
+    <meta name="theme-color" content="#000000" />
     <meta name="description" content="Aarush Modi — Software Engineering student at Western University specializing in Artificial Intelligence. Building multi-agent LLM systems, RAG pipelines, and quantitative finance tooling in Python, Java, C++, and Swift." />
     <meta name="author" content="Aarush Modi" />
     <meta name="keywords" content="Aarush Modi, software engineer, portfolio, Western University, Python, Java, C++, Swift, machine learning, LLM engineering, multi-agent systems, RAG, Anthropic Claude API, algorithmic trading" />
@@ -22,6 +22,20 @@
     <title>Aarush Modi | Portfolio</title>
   </head>
   <body>
+    <script>
+      // Apply the stored theme before first paint, otherwise light-mode
+      // visitors get a flash of the black default while React boots.
+      (function () {
+        try {
+          document.documentElement.setAttribute(
+            'data-theme',
+            localStorage.getItem('theme') || 'dark'
+          );
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>

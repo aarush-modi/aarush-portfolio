@@ -1,98 +1,75 @@
 import React from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { socials } from '../data';
+import Reveal from './Reveal';
 
-const inputStyle = {
-  width: '100%',
-  padding: '12px',
-  marginBottom: '12px',
-  borderRadius: '6px',
-  border: '1px solid var(--card-bg-hover)',
-  backgroundColor: 'var(--card-bg)',
-  color: 'var(--text)',
-  fontSize: '0.95rem',
-  outline: 'none',
-  transition: 'border-color 0.3s',
-};
+const Connect = () => (
+  <section id="connect" className="band">
+    <div className="section">
+      <Reveal className="section-head">
+        <p className="eyebrow">Contact</p>
+        <h2 className="section-title">Let's build something.</h2>
+      </Reveal>
 
-const Connect = () => {
-  return (
-    <section id="connect">
-      <h2 data-aos="fade-up">Connect With Me</h2>
+      <div className="grid-2" style={{ alignItems: 'start' }}>
+        <Reveal>
+          <p className="lead" style={{ marginBottom: '28px', maxWidth: '38ch' }}>
+            Open to internships, collaborations, and the occasional 3 AM idea. The fastest
+            way to reach me is the form — or find me here.
+          </p>
 
-      <div data-aos="fade-up" data-aos-delay="100" style={{ fontSize: '30px', marginBottom: '20px' }}>
-        {socials.map((s) => (
-          <a
-            key={s.platform}
-            href={s.url}
-            target="_blank"
-            rel="noreferrer"
-            aria-label={s.platform === 'github' ? 'GitHub profile' : 'LinkedIn profile'}
-            style={{ transition: "transform 0.3s, color 0.3s", display: "inline-block" }}
-            onMouseEnter={e => e.currentTarget.style.transform = "translateY(-3px)"}
-            onMouseLeave={e => e.currentTarget.style.transform = "translateY(0)"}
+          <div style={{ display: 'flex', gap: '10px' }}>
+            {socials.map(s => (
+              <a
+                key={s.platform}
+                href={s.url}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={s.platform === 'github' ? 'GitHub profile' : 'LinkedIn profile'}
+                className="card card-interactive"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '48px',
+                  height: '48px',
+                  padding: 0,
+                  borderRadius: '50%',
+                  color: 'var(--text)',
+                  fontSize: '19px',
+                }}
+              >
+                {s.platform === 'github' ? <FaGithub /> : <FaLinkedin />}
+              </a>
+            ))}
+          </div>
+        </Reveal>
+
+        <Reveal delay={80}>
+          <form
+            action="https://formsubmit.co/amodi32@uwo.ca"
+            method="POST"
+            aria-label="Contact form"
           >
-            {s.platform === 'github' ? <FaGithub style={{ marginRight: '15px' }} /> : <FaLinkedin />}
-          </a>
-        ))}
+            <input type="hidden" name="_subject" value="Website Contact Form Response" />
+            <input className="field" type="text" name="name" required placeholder="Name" />
+            <input className="field" type="email" name="email" required placeholder="Email" />
+            <textarea
+              className="field"
+              name="message"
+              rows="5"
+              required
+              placeholder="Message"
+              style={{ resize: 'vertical' }}
+            />
+            <button type="submit" className="btn btn-primary" style={{ marginTop: '6px' }}>
+              Send message
+            </button>
+          </form>
+        </Reveal>
       </div>
-
-      <form
-        data-aos="fade-up"
-        data-aos-delay="200"
-        action="https://formsubmit.co/amodi32@uwo.ca"
-        method="POST"
-        aria-label="Contact form"
-        style={{ maxWidth: '400px', margin: '0 auto' }}
-      >
-        <input type="hidden" name="_subject" value="Website Contact Form Response" />
-        <input
-          type="text"
-          name="name"
-          required
-          placeholder="Your Name"
-          style={inputStyle}
-          onFocus={e => e.currentTarget.style.borderColor = "var(--accent)"}
-          onBlur={e => e.currentTarget.style.borderColor = "var(--card-bg-hover)"}
-        />
-        <input
-          type="email"
-          name="email"
-          required
-          placeholder="Your Email"
-          style={inputStyle}
-          onFocus={e => e.currentTarget.style.borderColor = "var(--accent)"}
-          onBlur={e => e.currentTarget.style.borderColor = "var(--card-bg-hover)"}
-        />
-        <textarea
-          name="message"
-          rows="5"
-          required
-          placeholder="Your Message"
-          style={{ ...inputStyle, resize: "vertical" }}
-          onFocus={e => e.currentTarget.style.borderColor = "var(--accent)"}
-          onBlur={e => e.currentTarget.style.borderColor = "var(--card-bg-hover)"}
-        />
-        <button
-          type="submit"
-          style={{
-            backgroundColor: 'var(--accent)',
-            padding: '10px 24px',
-            border: 'none',
-            color: 'var(--bg)',
-            fontWeight: 'bold',
-            borderRadius: '6px',
-            cursor: 'pointer',
-            transition: 'opacity 0.3s, transform 0.3s',
-          }}
-          onMouseEnter={e => { e.currentTarget.style.opacity = "0.85"; e.currentTarget.style.transform = "translateY(-2px)"; }}
-          onMouseLeave={e => { e.currentTarget.style.opacity = "1"; e.currentTarget.style.transform = "translateY(0)"; }}
-        >
-          Send
-        </button>
-      </form>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default Connect;

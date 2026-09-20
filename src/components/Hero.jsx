@@ -1,69 +1,84 @@
 import React from 'react';
+import Reveal from './Reveal';
 
-const Hero = () => {
+const Hero = () => (
+  <>
+    <section className="hero" id="top">
+      <div className="hero-bg" />
+      <div className="hero-scrim" />
 
-  return (
-    <section
-      id="about"
-      style={{
-        position: "relative",
-        backgroundImage: "url('/dolomites-night.webp')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        minHeight: "100vh",
-        width: "100%",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        padding: "0 20px",
-        textAlign: "center",
-        color: "white",
-      }}
-    >
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          backgroundColor: "rgba(0, 0, 0, 0.5)",
-          zIndex: 0,
-        }}
-      />
+      <div className="hero-inner">
+        <Reveal>
+          <p className="eyebrow">Software Engineering · Western University</p>
+        </Reveal>
 
-      <div style={{ position: "relative", zIndex: 1 }}>
-        <h2 data-aos="fade-up" style={{ paddingTop: '120px' }}>~/aarush</h2>
+        <Reveal delay={80}>
+          <h1 className="display">Aarush Modi</h1>
+        </Reveal>
 
-        <p data-aos="fade-up" data-aos-delay="100" style={{ maxWidth: '800px', margin: '0 auto' }}>
-          I'm a third-year <strong>Software Engineering</strong> student at <strong>Western University</strong>, specializing in
-          <strong> Artificial Intelligence</strong> — with a thing for <strong>multi-agent AI systems, financial modelling</strong>,
-          and building ideas that outlive codebases.
-        </p>
+        <Reveal delay={160}>
+          <p className="hero-sub">
+            I build multi-agent LLM systems, RAG pipelines, and the quantitative
+            tooling that sits underneath them.
+          </p>
+        </Reveal>
 
-        <p data-aos="fade-up" data-aos-delay="200" style={{ maxWidth: '800px', margin: '20px auto' }}>
-          My journey into tech started not with code, but with curiosity...
-        </p>
-
-        <p data-aos="fade-up" data-aos-delay="300" style={{ maxWidth: '800px', margin: '20px auto' }}>
-          This past summer I was the sole software developer at <strong>A&amp;A Optoelectronics</strong>, where I owned a production
-          website end to end and designed a Bluetooth mesh app for commercial lighting control.
-        </p>
-
-        <p data-aos="fade-up" data-aos-delay="400" style={{ maxWidth: '800px', margin: '20px auto' }}>
-          I'm fluent in <strong>Python, Java, C++, and Swift</strong>, and most of my time goes to <strong>LLM engineering</strong> —
-          agent orchestration, RAG pipelines, and the quantitative systems underneath <strong>algorithmic trading</strong>.
-        </p>
-
-        <p data-aos="fade-up" data-aos-delay="500" style={{ maxWidth: '800px', margin: '20px auto' }}>
-          Whether it's a hackathon, a product prototype, or a 3 AM idea scribbled on my iPad — if it's worth building, I'm all in.
-        </p>
-
-        <p data-aos="fade-up" data-aos-delay="600" style={{ fontStyle: 'italic', maxWidth: '800px', margin: '20px auto' }}>
-          "The best way to predict the future is to create it."
-        </p>
+        <Reveal delay={240}>
+          <div className="hero-actions">
+            <a href="#projects" className="btn btn-primary">View projects</a>
+            <a href="#resume" className="btn btn-secondary">Read résumé</a>
+          </div>
+        </Reveal>
       </div>
+
+      <a href="#about" className="hero-scroll" aria-label="Scroll to about">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <path d="M6 9.5l6 6 6-6" />
+        </svg>
+      </a>
     </section>
-  );
-};
+
+    <section className="section" id="about">
+      <Reveal className="section-head">
+        <p className="eyebrow">About</p>
+        <h2 className="section-title">Curiosity first, code second.</h2>
+      </Reveal>
+
+      <Reveal className="prose" delay={80}>
+        <p>
+          I'm a third-year <strong>Software Engineering</strong> student at{' '}
+          <strong>Western University</strong>, specializing in{' '}
+          <strong>Artificial Intelligence</strong> — with a thing for{' '}
+          <strong>multi-agent AI systems, financial modelling</strong>, and building ideas
+          that outlive codebases.
+        </p>
+
+        <p>My journey into tech started not with code, but with curiosity…</p>
+
+        <p>
+          This past summer I was the sole software developer at{' '}
+          <strong>A&amp;A Optoelectronics</strong>, where I owned a production website end
+          to end and designed a Bluetooth mesh app for commercial lighting control.
+        </p>
+
+        <p>
+          I'm fluent in <strong>Python, Java, C++, and Swift</strong>, and most of my time
+          goes to <strong>LLM engineering</strong> — agent orchestration, RAG pipelines, and
+          the quantitative systems underneath <strong>algorithmic trading</strong>.
+        </p>
+
+        <p>
+          Whether it's a hackathon, a product prototype, or a 3 AM idea scribbled on my
+          iPad — if it's worth building, I'm all in.
+        </p>
+
+        <blockquote className="pull-quote">
+          The best way to predict the future is to create it.
+        </blockquote>
+      </Reveal>
+    </section>
+  </>
+);
 
 export default Hero;
