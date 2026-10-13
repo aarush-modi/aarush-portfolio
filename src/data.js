@@ -96,12 +96,16 @@ export const experience = [
       "Designed a therapeutic wellness lamp for Seasonal Affective Disorder.",
       "Created a kinetic energy measurement system for lab hail simulation experiments.",
       "Built a deep sea topographic mining tool for mapping and analyzing underwater terrain for resource extraction.",
+      "Built a top-down 2D fantasy kingdom RPG featuring exploration, combat, and story-driven quests.",
+      "Building a cryogenic unit management system for tracking and managing low-boiling-point fluids (Databases course).",
+      "Building a daycare admin portal, from requirements elicitation through system analysis and design (Software Requirements & Analysis course).",
     ],
   },
   {
     title: "Leadership & Competitions",
     time: "2024 – Present",
     bullets: [
+      "Leading a team in the IBM SkillsBuild competition, building a posture and focus coach that uses computer vision to give real-time feedback.",
       "Led a team in the 1220/1299 Ivey Case Competition (General Management Track).",
       "Represented residence as a Floor Rep on the Council — organized events and bridged communication gaps.",
     ],
